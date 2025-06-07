@@ -61,8 +61,8 @@ class ProductListPage {
     })
 
     controlsContainer.innerHTML = `
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-                <div class="hidden w-full md:w-auto">
+            <div class="flex flex-col flex-end md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                <div class=" w-full md:w-auto">
                     <div class="relative">
                         <input 
                             type="text" 
@@ -70,13 +70,13 @@ class ProductListPage {
                             placeholder="Search products..." 
                             class="hidden w-full md:w-80 pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                         >
-                        <svg class=" w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="hidden w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
                 </div>
                 
-                <div class="flex items-center gap-4 w-full md:w-auto">
+                <div class="flex flex-row-reverse sm:flex-row gap-4 w-full md:w-auto">
                     <div id="filter-container" class="relative">
                         <button id="filter-button" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
                             <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -107,12 +107,12 @@ class ProductListPage {
                     </div>
                     
                     <div class="flex border border-gray-300 rounded-lg overflow-hidden">
-                        <button id="grid-view" class="p-2 bg-purple-600 text-white">
+                        <button id="grid-view" class="hidden sm:block p-2 bg-purple-600 text-white">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                             </svg>
                         </button>
-                        <button id="list-view" class="p-2 bg-white text-gray-700">
+                        <button id="list-view" class="hidden sm:block p-2 bg-white text-gray-700">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
                             </svg>
@@ -668,7 +668,7 @@ class ProductListPage {
 
   private showToast(message: string, type: "success" | "error" = "success"): void {
     const toast = this.createElement("div", {
-      className: `toast glass-effect px-6 py-3 rounded-lg shadow-lg text-white ${type === "success" ? "bg-green-500/80" : "bg-red-500/80"}`,
+      className: `toast glass-effect px-6 py-3 rounded-lg shadow-lg text-green-500 ${type === "success" ? "bg-green-500/80" : "bg-red-500/80"}`,
     })
 
     toast.innerHTML = `
@@ -1024,7 +1024,7 @@ class ProductListPage {
 
     const quickViewBtn = this.createElement("button", {
       className:
-        "px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-full hover:bg-gray-50 transition-colors",
+        "px-4 py-2 border border-gray-300 text-green-400 text-sm font-medium rounded-full hover:bg-gray-50 transition-colors",
       textContent: "Quick View",
       onclick: (e: Event) => {
         e.preventDefault()
@@ -1034,7 +1034,7 @@ class ProductListPage {
     })
 
     const addToCartBtn = this.createElement("button", {
-      className: `px-4 py-2 gradient-bg text-white text-sm font-medium rounded-full hover:opacity-90 transition-all duration-300 ${product.stock === 0 ? "opacity-50 cursor-not-allowed" : ""}`,
+      className: `px-4 py-2 gradient-bg text-green-400 text-sm text-green-500 font-medium rounded-full hover:opacity-90 transition-all duration-300 ${product.stock === 0 ? "opacity-50 cursor-not-allowed" : ""}`,
       textContent: "Add to Cart",
       onclick: (e: Event) => {
         e.preventDefault()
@@ -1126,3 +1126,11 @@ class ProductListPage {
 
 // Initialize the page
 export const productListPage = new ProductListPage()
+
+export function createProductGridCard(product: Product): HTMLElement {
+  return productListPage['productGridCard'](product);
+}
+
+export function createProductListCard(product: Product): HTMLElement {
+  return productListPage['productListCard'](product);
+}
