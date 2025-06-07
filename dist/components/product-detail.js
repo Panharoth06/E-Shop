@@ -23,6 +23,7 @@ class ProductDetailPage {
             try {
                 yield this.loadProduct();
                 if (this.product) {
+                    console.log('render in product details');
                     this.render();
                 }
                 else {
@@ -122,7 +123,7 @@ class ProductDetailPage {
     }
     showToast(message, type = 'success') {
         const toast = this.createElement('div', {
-            className: `toast glass-effect px-6 py-3 rounded-lg shadow-lg text-green-500 ${type === 'success' ? 'bg-green-500' : 'bg-red-500'}`,
+            className: `toast glass-effect px-6 py-3 rounded-lg shadow-lg text-green-500 ${type === 'success' ? 'bg-green-500 text-green-500' : 'bg-red-500 text-red-500'}`,
             textContent: message
         });
         this.toastContainer.appendChild(toast);
