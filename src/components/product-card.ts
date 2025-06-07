@@ -745,7 +745,7 @@ class ProductListPage {
         `
 
     const imageLink = this.createElement("a", {
-      href: `/pages/product-detail.html?id=${product.id}`,
+      href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
       className: "block relative",
     })
 
@@ -801,7 +801,7 @@ class ProductListPage {
     })
 
     const titleLink = this.createElement("a", {
-      href: `/pages/product-detail.html?id=${product.id}`,
+      href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
       className: "block",
     })
 
@@ -913,7 +913,7 @@ class ProductListPage {
     imageContainer.appendChild(wishlistButton)
 
     const imageLink = this.createElement("a", {
-      href: `/pages/product-detail.html?id=${product.id}`,
+      href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
       className: "block h-full",
     })
 
@@ -946,7 +946,7 @@ class ProductListPage {
     })
 
     const titleLink = this.createElement("a", {
-      href: `/pages/product-detail.html?id=${product.id}`,
+      href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
       className: "block",
     })
 
