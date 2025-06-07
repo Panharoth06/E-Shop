@@ -75,7 +75,7 @@ export const footer = () => {
 
         <!-- Copyright -->
         <div class="mt-12 border-t border-gray-600 pt-6 text-center text-sm text-gray-200">
-            <p>© 2025 Your Shop. All Rights Reserved.</p>
+            <p>© 2025 E-Shop. All Rights Reserved.</p>
             <p class="mt-2">
                 <a href="/privacy" class="hover:text-gray-200 transition-colors mx-2">Privacy Policy</a> |
                 <a href="/terms" class="hover:text-gray-200 transition-colors mx-2">Terms of Service</a> |
