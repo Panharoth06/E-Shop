@@ -637,7 +637,7 @@ class ProductListPage {
             </svg>
         `;
         const imageLink = this.createElement("a", {
-            href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
+            href: `pages/product-detail.html?id=${product.id}`,
             className: "block relative",
         });
         const imageContainer = this.createElement("div", {
@@ -683,7 +683,7 @@ class ProductListPage {
             textContent: this.capitalizeFirstLetter(product.category),
         });
         const titleLink = this.createElement("a", {
-            href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
+            href: `pages/product-detail.html?id=${product.id}`,
             className: "block",
         });
         const title = this.createElement("h3", {
@@ -777,7 +777,7 @@ class ProductListPage {
         `;
         imageContainer.appendChild(wishlistButton);
         const imageLink = this.createElement("a", {
-            href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
+            href: `pages/product-detail.html?id=${product.id}`,
             className: "block h-full",
         });
         const image = this.createElement("img", {
@@ -803,7 +803,7 @@ class ProductListPage {
             textContent: this.capitalizeFirstLetter(product.category),
         });
         const titleLink = this.createElement("a", {
-            href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
+            href: `pages/product-detail.html?id=${product.id}`,
             className: "block",
         });
         const title = this.createElement("h3", {

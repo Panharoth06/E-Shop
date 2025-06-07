@@ -283,7 +283,7 @@ class ProductListPage {
             className: 'bg-white border border-gray-100 rounded-2xl overflow-hidden card slide-in'
         });
         const imageLink = this.createElement('a', {
-            href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
+            href: `pages/product-detail.html?id=${product.id}`,
             className: 'block'
         });
         const imageContainer = this.createElement('div', {
@@ -305,7 +305,7 @@ class ProductListPage {
             className: 'p-6 space-y-4'
         });
         const titleLink = this.createElement('a', {
-            href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
+            href: `pages/product-detail.html?id=${product.id}`,
             className: 'block'
         });
         const title = this.createElement('h3', {

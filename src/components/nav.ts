@@ -290,7 +290,7 @@ class ProductListPage {
         });
         
         const imageLink = this.createElement('a', {
-            href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
+            href: `pages/product-detail.html?id=${product.id}`,
             className: 'block'
         });
         
@@ -318,7 +318,7 @@ class ProductListPage {
         });
         
         const titleLink = this.createElement('a', {
-            href: `/E-Shop/pages/product-detail.html?id=${product.id}`,
+            href: `pages/product-detail.html?id=${product.id}`,
             className: 'block'
         });
         
